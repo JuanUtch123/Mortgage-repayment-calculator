@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Frontend Mentor Calculadora de pago de hipoteca</title>
+
+</head>
+
+<body>
+    <main class="main-container">
+        <section class="userinput-container">
+            <header class="header-container">
+                <h3>Calculadora de Hipoteca</h3>
+                <button data-clear>Limpiar Todo</button>
+            </header>
+            <div class="userinput">
+                <label>Cantidad de la Hipoteca</label>
+                <div class="input-wrapper">
+                    <label class="left input-wrapper-label">£</label>
+                    <input data-mortgage-amount class="userinput-input" style="padding-left: 3rem;">
+                </div>
+            </div>
+
+            <div class="sub-userinput">
+                <div style="display: flex; flex-direction: column;">
+                    <label>Plazo de la Hipoteca</label>
+                    <div class="input-wrapper">
+                        <label class="right input-wrapper-label">años</label>
+                        <input data-mortgage-term class="userinput-input sub-input">
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column;">
+                    <label>Tasa de Interés</label>
+                    <div class="input-wrapper">
+                        <label class="right input-wrapper-label">%</label>
+                        <input data-interest-rate class="userinput-input sub-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="userinput-radio">
+                <label>Tipo de Hipoteca</label>
+                <div class="query-wrapper">
+                    <label for="option1" class="query-option">
+                        <input type='radio' id='option1' name="mortgageType" value='repayment'>
+                        Amortización
+                    </label>
+                </div>
+
+                <div class="query-wrapper">
+                    <label for="option2" class="query-option">
+                        <input type='radio' id='option2' name="mortgageType" value='interest'>
+                        Solo Intereses
+                    </label>
+                </div>
+            </div>
+
+            <button class="userinput-calculate">
+                <img src="./assets/images/icon-calculator.svg" alt="Icono del botón">
+                Calcular Pagos
+            </button>
+        </section>
+
+        <section class="results-container">
+            <div class="empty-results">
+                <img src="assets/images/illustration-empty.svg">
+                <h3>Resultados mostrados aquí</h3>
+                <p>Complete el formulario y haga clic en calcular pagos para ver cuáles serían sus pagos mensuales.</p>
+            </div>
+
+            <div class="complete-results">
+                <header style="display: flex; align-items: end;">
+                    <h3>Tus resultados</h3>
+                </header>
+                <p>Los resultados se muestran a continuación según la información que proporcionaste.
+                    Para ajustar los resultados, edita el formulario y haz clic en calcular pagos nuevamente.</p>
+
+                <div class="completed-results-container">
+                    <div class="line-start"></div>
+                    <span>Tus pagos mensuales</span>
+                    <span class="repayment-value" data-monthly-repayment></span>
+                    <div class="line-split"></div>
+
+                    <span>Total que pagarás durante el plazo</span>
+                    <span class="term-value" data-term-value></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+</body>
+
+</html>
